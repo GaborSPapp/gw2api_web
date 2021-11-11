@@ -29,6 +29,7 @@
     function query() {
       let variable = document.getElementById('variable').value;
       window.location.href = location.protocol + '//' + location.host + location.pathname + "?var=" + variable;
+      document.getElementById("variable").value = variable;
     }
   </script>
 </body>
