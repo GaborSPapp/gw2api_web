@@ -16,6 +16,9 @@
     Http.onreadystatechange = (e) => {
       document.getElementById("api_query").innerHTML = "<pre>" + Http.responseText + "</pre>";
     }
+    
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
     const variable = urlParams.get('var');
     console.log(variable);
     if (variable) {
