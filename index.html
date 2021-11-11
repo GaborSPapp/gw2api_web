@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Title of the document</title>
+  <title>gw2 helper</title>
 </head>
 
 <body>
@@ -15,12 +15,12 @@
 
     Http.onreadystatechange = (e) => {
       console.log(Http.responseText)
+      document.getElementById("api_query").innerHTML = "<pre>" + Http.responseText + "</pre>"
     }
     
     let d = new Date();
     
     document.getElementById("date").innerHTML = "<h1>Today's date is " + d + "</h1>"
-    document.getElementById("api_query").innerHTML = "<pre>" + Http.responseText + "</pre>"
     
     alert("Today's date is " + d);
   </script>
