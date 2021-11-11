@@ -8,7 +8,7 @@
   <label for="variable">Recipe id:</label><br>
   <input type="text" id="variable" value="">
   <button onclick="query()" value="">get</button>
-  <pre id="api_query">no data</pre>
+  <pre id="api_query">loading...</pre>
   
   <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -23,7 +23,11 @@
     Http.send();
 
     Http.onreadystatechange = (e) => {
-      document.getElementById("api_query").innerHTML = Http.responseText;
+      if (Http.status = 200 || Http.status = 206) {
+        document.getElementById("api_query").innerHTML = Http.responseText;
+      } else {
+        document.getElementById("api_query").innerHTML = "no data";
+      }
     }
     
     function query() {
