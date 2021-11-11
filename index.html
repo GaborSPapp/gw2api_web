@@ -23,6 +23,7 @@
     Http.send();
 
     Http.onreadystatechange = (e) => {
+      console.log("Request status: " + Http.status);
       if (Http.status = 200 || Http.status = 206) {
         document.getElementById("api_query").innerHTML = Http.responseText;
       } else {
