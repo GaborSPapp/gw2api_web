@@ -28,7 +28,6 @@
         document.getElementById("api_query").innerHTML = Http.responseText;
       } else if (Http.status == 403 || Http.status == 404) {
         document.getElementById("api_query").innerHTML = Http.responseText;
-        console.log("fail text: "+Http.statusText);
       } else {
         document.getElementById("api_query").innerHTML = "no data";
       }
