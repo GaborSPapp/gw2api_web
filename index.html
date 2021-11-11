@@ -5,11 +5,10 @@
 </head>
 
 <body>
-  <p id="var">no var</p>
+  <p id="par">no parameter</p>
+  <input type="text" id="variable" value="">
+  <button name="id_var" value="" onclick="query();">get</button>
   <p id="api_query">no data</p>
-  <form action="" method="post">
-    <button name="id_var" value="upvote" onclick="query();">get</button>
-  </form>
   <script>
     const Http = new XMLHttpRequest();
     const url='https://api.guildwars2.com/v2/recipes/7236';
@@ -22,15 +21,19 @@
     
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const variable = urlParams.get('var');
-    console.log(variable);
-    if (variable) {
-      document.getElementById("var").innerHTML = variable;
+    const param = urlParams.get('var');
+    console.log(param);
+    if (param) {
+      document.getElementById("par").innerHTML = param;
+    }
+    if ("") {
+      console.log("kiírja");
     }
     console.log(location.protocol + '//' + location.host + location.pathname);
     
     function query() {
-      window.location.href = location.protocol + '//' + location.host + location.pathname;
+      let variable = document.getElementById('variable').value;
+      window.location.href = location.protocol + '//' + location.host + location.pathname + "?var=" + variable;
     }
   </script>
 </body>
