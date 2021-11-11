@@ -5,8 +5,8 @@
 </head>
 
 <body>
-  <p id="date">no date</p>
   <p id="api_query">no data</p>
+  <p id="var">no var</p>
   <script>
     const Http = new XMLHttpRequest();
     const url='https://api.guildwars2.com/v2/recipes/7236';
@@ -16,9 +16,10 @@
     Http.onreadystatechange = (e) => {
       document.getElementById("api_query").innerHTML = "<pre>" + Http.responseText + "</pre>"
     }
-    
-    let d = new Date();
-    document.getElementById("date").innerHTML = "<h1>Today's date is " + d + "</h1>"
+    const variable = urlParams.get('var')
+    if (variable) {
+      document.getElementById("var").innerHTML = variable
+    }
   </script>
 </body>
 
