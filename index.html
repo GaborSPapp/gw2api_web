@@ -7,29 +7,24 @@
 <body>
   <p id="par">no parameter</p>
   <input type="text" id="variable" value="">
-  <button name="id_var" value="" onclick="query();">get</button>
+  <button onclick="query()" value="">get</button>
   <p id="api_query">no data</p>
+  
   <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const param = urlParams.get('var');
+    if (param) {
+      document.getElementById("par").innerHTML = param;
+    }
+    
     const Http = new XMLHttpRequest();
-    const url='https://api.guildwars2.com/v2/recipes/7236';
+    const url='https://api.guildwars2.com/v2/recipes/'+param;
     Http.open("GET", url);
     Http.send();
 
     Http.onreadystatechange = (e) => {
-      //document.getElementById("api_query").innerHTML = "<pre>" + Http.responseText + "</pre>";
+      document.getElementById("api_query").innerHTML = "<pre>" + Http.responseText + "</pre>";
     }
-    
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const param = urlParams.get('var');
-    console.log(param);
-    if (param) {
-      document.getElementById("par").innerHTML = param;
-    }
-    if ("") {
-      console.log("kiírja");
-    }
-    console.log(location.protocol + '//' + location.host + location.pathname);
     
     function query() {
       let variable = document.getElementById('variable').value;
