@@ -6,6 +6,8 @@
 
 <body>
   <script>
+    let d = new Date();
+    alert("Today's date is " + d);
     const Http = new XMLHttpRequest();
     const url='https://api.guildwars2.com/v2/recipes/7236';
     Http.open("GET", url);
