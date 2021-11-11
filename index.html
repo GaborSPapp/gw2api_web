@@ -5,6 +5,16 @@
 </head>
 
 <body>
+  <script>
+    const Http = new XMLHttpRequest();
+    const url='https://api.guildwars2.com/v2/recipes/7236';
+    Http.open("GET", url);
+    Http.send();
+
+    Http.onreadystatechange = (e) => {
+      console.log(Http.responseText)
+    }  
+  </script>
   <h1>This is a heading</h1>
   <p>This is a paragraph.</p>
 </body>
