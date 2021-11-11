@@ -15,6 +15,7 @@
     const param = urlParams.get('recipe');
     if (param) {
       document.getElementById("param").innerHTML = "recipe id: " + param;
+      document.getElementById("variable").value = param;
     }
     
     const Http = new XMLHttpRequest();
@@ -29,7 +30,6 @@
     function query() {
       let variable = document.getElementById('variable').value;
       window.location.href = location.protocol + '//' + location.host + location.pathname + "?recipe=" + variable;
-      document.getElementById("variable").value = variable;
     }
   </script>
 </body>
