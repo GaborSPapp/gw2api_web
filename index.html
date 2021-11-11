@@ -5,17 +5,15 @@
 </head>
 
 <body>
-  <p id="param">no recipe id</p>
-  <label for="variable">Recipe id:</label><br>
+  <label for="variable">Recipe id:</label><br>
   <input type="text" id="variable" value="">
   <button onclick="query()" value="">get</button>
-  <p id="api_query">no data</p>
+  <pre id="api_query">no data</pre>
   
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const param = urlParams.get('recipe');
     if (param) {
-      document.getElementById("param").innerHTML = "recipe id: " + param;
       document.getElementById("variable").value = param;
     }
     
@@ -25,7 +23,7 @@
     Http.send();
 
     Http.onreadystatechange = (e) => {
-      document.getElementById("api_query").innerHTML = "<pre>" + Http.responseText + "</pre>";
+      document.getElementById("api_query").innerHTML = Http.responseText;
     }
     
     function query() {
