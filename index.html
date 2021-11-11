@@ -5,6 +5,8 @@
 </head>
 
 <body>
+  <h1>This is a heading</h1>
+  <p>This is a paragraph.</p>
   <script>
     let d = new Date();
     alert("Today's date is " + d);
@@ -15,10 +17,10 @@
 
     Http.onreadystatechange = (e) => {
       console.log(Http.responseText)
-    }  
+    }
+    let d = new Date();
+    document.body.innerHTML = "<h1>Today's date is " + d + "</h1>"
   </script>
-  <h1>This is a heading</h1>
-  <p>This is a paragraph.</p>
 </body>
 
 </html>
