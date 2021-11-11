@@ -5,8 +5,11 @@
 </head>
 
 <body>
-  <p id="api_query">no data</p>
   <p id="var">no var</p>
+  <p id="api_query">no data</p>
+  <form action="" method="post">
+    <button name="id_var" value="upvote" onclick="query();">get</button>
+  </form>
   <script>
     const Http = new XMLHttpRequest();
     const url='https://api.guildwars2.com/v2/recipes/7236';
@@ -14,7 +17,7 @@
     Http.send();
 
     Http.onreadystatechange = (e) => {
-      document.getElementById("api_query").innerHTML = "<pre>" + Http.responseText + "</pre>";
+      //document.getElementById("api_query").innerHTML = "<pre>" + Http.responseText + "</pre>";
     }
     
     const queryString = window.location.search;
@@ -23,6 +26,11 @@
     console.log(variable);
     if (variable) {
       document.getElementById("var").innerHTML = variable;
+    }
+    console.log(location.protocol + '//' + location.host + location.pathname);
+    
+    function query() {
+      window.location.href = location.protocol + '//' + location.host + location.pathname;
     }
   </script>
 </body>
