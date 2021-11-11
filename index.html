@@ -5,16 +5,16 @@
 </head>
 
 <body>
-  <p id="par">no parameter</p>
+  <p id="param">no recipe id</p>
   <input type="text" id="variable" value="">
   <button onclick="query()" value="">get</button>
   <p id="api_query">no data</p>
   
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const param = urlParams.get('var');
+    const param = urlParams.get('recipe');
     if (param) {
-      document.getElementById("par").innerHTML = param;
+      document.getElementById("param").innerHTML = "recipe id: " + param;
     }
     
     const Http = new XMLHttpRequest();
