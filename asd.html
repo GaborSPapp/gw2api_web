@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Poggies</title>
+	<style>
+		.yay {
+			color: green;
+			background-color: gray;
+			padding: .5rem;
+		}
+		.dropdown {
+			opacity: 0;
+			visibility: hidden;
+		}
+		.yay:focus-within .dropdown {
+			opacity: 1;
+			visibility: visible;
+			color: red;
+		}
+		
+		body {
+			margin: 5rem;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<button class="yay">
+		AAAA
+		<div class="dropdown">
+			<a href="asd.html?id=1">asdf</a>
+			<a href="asd.html?id=2">dfsdf</a>
+			<a href="asd.html?id=3">dfssd</a>
+		</div>
+		<div class="dropdown">
+			<a href="asd.html?id=4">asdwqef</a>
+			<a href="asd.html?id=5">dfwersdf</a>
+			<a href="asd.html?id=6">dfsesd</a>
+		</div>
+	</button>
+	<div id="selector">nem</div>
+	<p>
+		<var id="ssselector">none</var>
+		selected
+	</p>
+	<script>
+		alert("start");
+		const urlParams = new URLSearchParams(window.location.search);
+		const param = urlParams.get('id');
+		if (param) {
+		  document.getElementById("selector").value = param;
+		}
+		document.getElementById("selector").value = "sas";
+		
+		alert("done");
+	</script>
+</body>
+
+</html>
