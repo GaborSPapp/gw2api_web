@@ -15,24 +15,26 @@
     const param = urlParams.get('recipe');
     if (param) {
       document.getElementById("variable").value = param;
-    }
-    
-    const Http = new XMLHttpRequest();
-    const url='https://api.guildwars2.com/v2/recipes?ids='+param;
-    Http.open("GET", url);
-    Http.send();
+      
+      const Http = new XMLHttpRequest();
+      const url='https://api.guildwars2.com/v2/recipes?ids='+param;
+      Http.open("GET", url);
+      Http.send();
 
-    Http.onreadystatechange = (e) => {
-      console.log("Request status: " + Http.status);
-      if (Http.status == 200 || Http.status == 206) {
-        document.getElementById("api_query").innerHTML = Http.responseText;
-      } else if (Http.status == 403 || Http.status == 404) {
-        document.getElementById("api_query").innerHTML = Http.responseText;
-      } else if (Http.status == 400) {
-        document.getElementById("api_query").innerHTML = Http.responseText;
-      } else {
-        document.getElementById("api_query").innerHTML = "no data";
+      Http.onreadystatechange = (e) => {
+        console.log("Request status: " + Http.status);
+        if (Http.status == 200 || Http.status == 206) {
+          document.getElementById("api_query").innerHTML = Http.responseText;
+        } else if (Http.status == 403 || Http.status == 404) {
+          document.getElementById("api_query").innerHTML = Http.responseText;
+        } else if (Http.status == 400) {
+          document.getElementById("api_query").innerHTML = Http.responseText;
+        } else {
+          document.getElementById("api_query").innerHTML = "yikes";
+        }
       }
+    } else {
+      document.getElementById("api_query").innerHTML = "no data";
     }
     
     function query() {
