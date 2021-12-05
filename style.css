@@ -1,0 +1,58 @@
+:root {
+	--clr-base: rgb(25, 25, 52);
+	--clr-text: rgb(237, 237, 222);
+	--clr-hover: rgba(255, 255, 255, .05);
+	--clr-link: rgb(255,0,127);
+	--clr-link-hover: rgba(255, 255, 255, .25);
+}
+			
+body {
+	background-color: var(--clr-base);
+	color: var(--clr-text);
+	margin: 0;
+}
+		
+.container {
+	margin: 5rem;
+}
+
+.navi {
+	font-size: 2rem;
+	width: max-content;
+	overflow: hidden;
+}
+
+.navlabels {
+	height: 100%;
+	overflow: auto;
+}
+
+.navlabel {
+	width: max-content;
+	float:left;
+	padding: 0 .25em;
+	display: inline-block;
+	cursor: default;
+}
+
+.navlabel:hover {
+	background-color: var(--clr-hover);
+}
+
+.dropdown {
+	display: none;
+	width: max-content;
+	position: absolute;
+	background-color: var(--clr-link);
+}
+
+.dropdown a {
+	color: var(--clr-text);
+	text-decoration: none;
+	display: block;
+	padding: .5em;
+}
+
+.dropdown a:hover {
+	background-color: var(--clr-link-hover);
+}
