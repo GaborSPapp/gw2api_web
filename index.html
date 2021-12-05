@@ -5,10 +5,24 @@
 </head>
 
 <body>
-  <label for="variable">Recipe id:</label><br>
-  <input type="text" id="variable" value="">
-  <button onclick="query()" value="">get</button>
-  <pre id="api_query">loading...</pre>
+  <nav class="navi">
+		<div class="navlabels">
+			<div class="navlabel menu">
+				<b>Menu</b>
+			</div>
+		</div>
+		<div class="dropdown" id="links">
+			<a href="https://github.com/GaborSPapp/gw2api_web">Repo</a>
+			<a href="file:///M:/Misc/index.html">you cant see</a>
+		</div>
+	</nav>
+	
+	<div class="container">
+    <label for="variable">Recipe id:</label><br>
+    <input type="text" id="variable" value="">
+    <button onclick="query()" value="">get</button>
+    <pre id="api_query">loading...</pre>
+  </div>
   
   <script>
     const urlParams = new URLSearchParams(window.location.search);
