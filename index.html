@@ -2,23 +2,23 @@
 <html>
 <head>
   <title>gw2 helper</title>
-	<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <nav class="navi">
-		<div class="navlabels">
-			<div class="navlabel menu">
-				<b>Menu</b>
-			</div>
-		</div>
-		<div class="dropdown" id="links">
-			<a href="https://github.com/GaborSPapp/gw2api_web">Repo</a>
-			<a href="file:///M:/Misc/index.html">you cant see</a>
-		</div>
-	</nav>
+    <div class="navlabels">
+      <div class="navlabel menu">
+        <b>Menu</b>
+      </div>
+    </div>
+    <div class="dropdown" id="links">
+      <a href="https://github.com/GaborSPapp/gw2api_web">Repo</a>
+      <a href="file:///M:/Misc/index.html">you cant see</a>
+    </div>
+  </nav>
 	
-	<div class="container">
+  <div class="container">
     <label for="variable">Recipe id:</label><br>
     <input type="text" id="variable" value="">
     <button onclick="query()" value="">get</button>
@@ -26,6 +26,23 @@
   </div>
   
   <script>
+    let menu = document.querySelector("div.menu");
+    menu.addEventListener("mouseover", on_hover);
+    menu.addEventListener('mouseout', off_hover);
+    let dropdown = document.querySelector("div.dropdown");
+    dropdown.addEventListener("mouseover", on_hover);
+    dropdown.addEventListener('mouseout', off_hover);
+		
+    function on_hover(){
+      let x = document.getElementById("links");
+      x.style.display = "block";
+    }
+		
+    function off_hover(){
+      let x = document.getElementById("links");
+      x.style.display = "none";
+    }
+	  
     const urlParams = new URLSearchParams(window.location.search);
     const param = urlParams.get('recipe');
     if (param) {
