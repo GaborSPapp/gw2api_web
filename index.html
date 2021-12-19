@@ -25,7 +25,10 @@
     <pre id="api_query">loading...</pre>
   </div>
   
-  <script>	  
+  <script>
+    document.cookie = "asd=asd cookie";
+		console.log(document.cookie);
+    
     let menu = document.querySelector("div.menu");
     menu.addEventListener("mouseover", on_hover);
     menu.addEventListener('mouseout', off_hover);
