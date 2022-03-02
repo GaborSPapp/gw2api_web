@@ -61,6 +61,8 @@
           document.getElementById("api_query").innerHTML = Http.responseText;
         } else if (Http.status == 400) {
           document.getElementById("api_query").innerHTML = Http.responseText;
+				} else if (Http.status == 503) {
+					document.getElementById("api_query").innerHTML = Http.responseText + "\n\t¯\\_(ツ)_/¯";
         } else {
           document.getElementById("api_query").innerHTML = "yikes";
         }
